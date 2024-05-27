@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Кликер</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            margin: 20px auto;
+        }
+        .balance {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle" onclick="increment()">Клик</div>
+        <div class="balance">Баланс: <span id="balance">0</span></div>
+    </div>
+
+    <script>
+        let balance = 0;
+
+        function increment() {
+            balance++;
+            document.getElementById('balance').textContent = balance;
+        }
+
+        // Инициализация веб-приложения Telegram
+        window.Telegram.WebApp.ready();
+    </script>
+</body>
+</html>
